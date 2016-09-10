@@ -34,7 +34,9 @@ public class ReentrantRepeater extends WordRepeater {
             System.out.println(word);
             times--;
             mine.signalAll();
-            if (times > 0) other.await();
+            if (times > 0)
+                //todo: add Turn to this Repeater; call await in while cycle (see SynchronizedRepeater)
+                other.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

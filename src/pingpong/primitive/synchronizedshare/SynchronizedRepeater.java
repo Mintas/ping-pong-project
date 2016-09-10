@@ -22,7 +22,9 @@ public class SynchronizedRepeater extends PrimitiveRepeater {
         synchronized (turn) {
             try {
                 makeHit(PING, PONG);
-                turn.wait();
+                while (turn.getHit() == PONG) {
+                    turn.wait();
+                }
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

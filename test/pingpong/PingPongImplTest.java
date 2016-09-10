@@ -19,10 +19,10 @@ public class PingPongImplTest {
 
         //theGame.playPingPong(VOLATILE, 5);
 
-        //theGame.playPingPong(SYNCHRONIZED, 5);
+        theGame.playPingPong(SYNCHRONIZED, 5);
 
         //theGame.playPingPong(REENTRANT, 5);
 
-        theGame.playPingPong(PHASER, 5);
+        //theGame.playPingPong(PHASER, 5);
     }
 }

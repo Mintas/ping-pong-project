@@ -42,7 +42,9 @@ public class SynchronizedRepeaterOld extends WordRepeater {
         synchronized (turn) {
             try {
                 makeTurn(PING, PONG);
-                turn.wait();
+                while (turn.getHit() == PONG) {
+                    turn.wait();
+                }
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
